@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O‘qituvchi profili</title>
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* O'qituvchi haqida ma'lumot */
+.teacher-info {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    color: white;
+    border-radius: 10px;
+}
+
+.teacher-info h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+/* Spinner overlay */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Spinner animatsiya */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #4CAF50;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Sahifa fade-in/out uchun animatsiyalar */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.teacher-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Sinflar sarlavhasi */
+h3 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Sinflar ro‘yxati */
+.class-list {
+    list-style: none;
+    padding: 0;
+}
+
+.class-item {
+    background-color: #ffffff;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.class-item:hover {
+    background-color: #f1f8e9;
+    transform: translateY(-3px);
+}
+
+.class-item a {
+    text-decoration: none;
+    color: #388E3C;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: block;
+}
+
+/* Responsive dizayn */
+@media (max-width: 600px) {
+    .teacher-info h2 {
+        font-size: 1.6rem;
+    }
+
+    .teacher-info p {
+        font-size: 0.9rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .class-item a {
+        font-size: 1rem;
+    }
+}
+/* Sahifa uchun asosiy fade-in/fade-out animatsiya */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.admin a{
+text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div id="spinner" class="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
+    
+    <div class="container">
+        <!-- O'qituvchi haqida ma'lumot -->
+        <div class="teacher-info">
+            <h2>O‘qituvchi: Otabek Xudoyqulov</h2>
+            <p>Webster Universitituti</p>
+            <p>Mutaxassislik: Ingliz tili</p>
+            <p>Registan LC: English Teacher</p>
+        </div>
+
+        <!-- Sinflar ro‘yxati -->
+        <h3>Guruhlar:</h3>
+
+        <ul class="class-list">
+            <li class="class-item">
+                <a href="./English course.html">Toq Kunlari 14:00 dan 16:00 </a>
+            </li>
+            <li class="class-item">
+                <a href="./10kurs.html">Juft kunlari 10:00 dan 11:30 </a>
+            </li>
+            <li class="class-item">
+                <a href="./17kurs.html">Juft kunlari 17:00 dan 18:30</a>
+            </li>
+            <li class="class-item"><a href="https://t.me/Asomiddin0328">Adminga Murojat </a>
+            </li>
+            <!-- Qo‘shimcha sinflar shu yerga qo‘shilishi mumkin -->
+             
+        </ul>
+    </div>
+<script>// Sahifalar o‘rtasida o‘tishda fade-out animatsiya qo‘shish
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".class-item a");
+    
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault(); // Sahifani to‘g‘ridan-to‘g‘ri yuklashdan saqlaydi
+    
+                // Sahifani fade-out bilan animatsiyalash
+                document.body.classList.add("fade-out");
+    
+                // Fade-out tugagach, yangi sahifani yuklash
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500); // Fade-out animatsiya davomiyligi (0.5 sekund)
+            });
+        });
+    
+        // Sahifa yuklanganda fade-in effekt qo‘llash
+        document.body.classList.add("fade-in");
+    });// Sahifa yuklanganda spinnerni yashirish
+window.addEventListener("load", function () {
+    const spinner = document.getElementById("spinner");
+    spinner.style.display = "none"; // Yuklangach, spinnerni yashirish
+});
+
+// Sahifalar o‘rtasida o‘tishda fade-out va spinner qo‘shish
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".class-item a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Sahifani to‘g‘ridan-to‘g‘ri yuklashdan saqlaydi
+
+            // Sahifani fade-out va spinner bilan animatsiyalash
+            document.body.classList.add("fade-out");
+            document.getElementById("spinner").style.display = "flex"; // Spinnerni ko‘rsatish
+
+            // Fade-out tugagach, yangi sahifani yuklash
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 500); // Fade-out animatsiya davomiyligi (0.5 sekund)
+        });
+    });
+
+    // Sahifa yuklanganda fade-in effekt qo‘llash
+    document.body.classList.add("fade-in");
+});
+
+    </script>
+</body>
+</html>
